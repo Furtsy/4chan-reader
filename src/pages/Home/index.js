@@ -11,7 +11,7 @@ export function Home() {
     const fetchBoards = async () => {
       try {
         const response = await axios.get(
-          'https://a.4cdn.org/boards.json',
+          'https://cors-anywhere.herokuapp.com/https://a.4cdn.org/boards.json',
           {
             headers: {
               'X-Requested-With': 'XMLHttpRequest',
@@ -26,7 +26,7 @@ export function Home() {
 
     const fetchActiveThreads = async () => {
       try {
-        const response = await axios.get('https://api.4stats.io/activeThreads/p');
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.4stats.io/activeThreads/p');
         setActiveThreads(response.data);
       } catch (error) {
         console.error('pool closed asd famanas threasd!:', error);
